@@ -48,7 +48,7 @@ $mysqli->close();
                 <td><?php echo $rows['location'];?></td>
                 <td><?php echo $rows['gender'];?></td>
                 <td><?php echo $rows['lbdate'];?></td>
-                <td><a href="deletion.php" did="<?php echo $rows['did'];?>">delete</a></td>
+                <td><a href="deletion.php/?did=<?php echo $rows['did'];?>">delete</a></td>
             </tr>
             <?php
                 }

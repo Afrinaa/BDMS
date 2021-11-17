@@ -51,9 +51,9 @@
           <li class="nav-item">
             <a class="nav-link" href="http://localhost/aproject/user/annshow.php">View announcement</a>
           </li>
-		      <li class="nav-item">
+		      <!--li class="nav-item">
             <a class="nav-link" href="http://localhost/aproject/user/update.php">Change profile information</a>
-          </li>
+          </!--li-->
           <li class="nav-item">
             <a class="nav-link" href="http://localhost/aproject/user/mess.php">Leave a Message</a>
           </li>

@@ -25,7 +25,7 @@ $ld= $_GET['ld'];
   	<h2>Donor Details</h2>
   </div>
 	
-  <form method="get" action="">
+  <form method="POST" action="">
       <div class="input-group">
   	  <label>Fullname</label>
   	  <input type="text" value="<?php echo $fn;?>" name="fullname">
@@ -65,7 +65,7 @@ $ld= $_GET['ld'];
 </body>
 </html>
 <?php
-if($_GET['submit'])
+if(isset($_POST['submit']))
 {
     $fullname = $_POST['fullname'];
     $email = $_POST['email'];
@@ -75,11 +75,11 @@ if($_GET['submit'])
     $location = $_POST['location'];
     $gender = $_POST['gender'];
     $lbdate = $_POST['lbdate'];
-    $sql = "UPDATE donor SET fullname = '$fullname', email = '$email', bgroup = '$bgroup', weight = '$weight', 
+	$sql = "UPDATE donor SET fullname = '$fullname', email = '$email', bgroup = '$bgroup', weight = '$weight', 
     dob = '$dob', location = '$location', gender = '$gender', lbdate = '$lbdate' WHERE email = '$email' ";
     $data = mysqli_query($mysqli,$sql);
     $_SESSION['message'] = "Updated!"; 
-	header('location: index.php');
+	header('location: ../user/dlist.php');
     
 }
 ?>

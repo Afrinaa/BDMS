@@ -50,7 +50,6 @@ $mysqli->close();
                 <td><a href="up.php? fn=<?php echo $rows['fullname'];?> & em=<?php echo $rows['email'];?> & bg=<?php echo $rows['bgroup'];?> &
 				wt=<?php echo $rows['weight'];?> & db=<?php echo $rows['dob'];?> & loc=<?php echo $rows['location'];?> & 
 				gn=<?php echo $rows['gender'];?> & ld=<?php echo $rows['lbdate'];?>">update</a></td>
-                
             </tr>
             <?php
                 }
