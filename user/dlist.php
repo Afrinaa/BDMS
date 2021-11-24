@@ -1,6 +1,5 @@
 <?php
 include('../connect.php');
-// SQL query to select data from database
 $sql = "SELECT * FROM donor";
 $result = $mysqli->query($sql);
 $mysqli->close(); 
@@ -18,7 +17,6 @@ $mysqli->close();
 <body>
     <section>
         <h1>Donor Details</h1>
-        <!-- TABLE CONSTRUCTION-->
         <table>
             <tr>
                 <th>Full Name</th>
@@ -30,14 +28,12 @@ $mysqli->close();
                 <th>Gender</th>
                 <th>Last Blood Donation Date</th>
             </tr>
-            <!-- PHP CODE TO FETCH DATA FROM ROWS-->
             <?php   // LOOP TILL END OF DATA 
                 while($rows=$result->fetch_assoc())
                 {
              ?>
             <tr>
-                <!--FETCHING DATA FROM EACH 
-                    ROW OF EVERY COLUMN-->
+                <!--FETCHING DATA-->
                 <td><?php echo $rows['fullname'];?></td>
                 <td><?php echo $rows['email'];?></td>
                 <td><?php echo $rows['bgroup'];?></td>

@@ -23,7 +23,6 @@
 	<h2>Home Page</h2>
 </div>
 <div class="content">
-  	<!-- notification message -->
   	<?php if (isset($_SESSION['success'])) : ?>
       <div class="error success" >
       	<h3>
@@ -35,7 +34,6 @@
       </div>
   	<?php endif ?>
 
-    <!-- logged in admin information -->
     <?php  if (isset($_SESSION['name'])) : ?>
     	<p>Welcome <strong><?php echo $_SESSION['name']; ?></strong>,</p>
 		<nav class="navbar navbar-expand-lg navbar-light bg-danger">

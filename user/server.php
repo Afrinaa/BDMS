@@ -100,7 +100,7 @@ if (isset($_POST['login_user'])) {
   }
   // REGISTER DONOR
 if (isset($_POST['reg_donor'])) { 
-  // receive all input values from the form
+ 
   $fullname = mysqli_real_escape_string($db, $_POST['fullname']);
   $email = mysqli_real_escape_string($db, $_POST['email']);
   $bgroup = mysqli_real_escape_string($db, $_POST['bgroup']);
@@ -110,8 +110,6 @@ if (isset($_POST['reg_donor'])) {
   $gender = mysqli_real_escape_string($db, $_POST['gender']);
   $lbdate = mysqli_real_escape_string($db, $_POST['lbdate']);
 
-  // form validation: ensure that the form is correctly filled ...
-  // by adding (array_push()) corresponding error unto $errors array
   if (empty($fullname)) { array_push($errors, "Fullname is required"); }
   if (empty($email)) { array_push($errors, "Email is required"); }
   if (empty($bgroup)) { array_push($errors, "Blood group is required"); }
@@ -119,10 +117,7 @@ if (isset($_POST['reg_donor'])) {
   if (empty($dob)) { array_push($errors, "Date of birth is required"); }
   if (empty($location)) { array_push($errors, "Location is required"); }
   if (empty($gender)) { array_push($errors, "Gender is required"); }
-  
 
-  // first check the database to make sure 
-  // a donor does not already exist with the same fullname and/or email
   $donor_check_query = "SELECT * FROM donor WHERE email='$email' LIMIT 1";
   $result = mysqli_query($db, $donor_check_query);
   $donor = mysqli_fetch_assoc($result);
@@ -133,7 +128,6 @@ if (isset($_POST['reg_donor'])) {
     }
   }
 
-  // Finally, register donor if there are no errors in the form
   if (count($errors) == 0) {
   	$query = "INSERT INTO donor (did, fullname, email, bgroup, weight, dob, location, gender, lbdate) 
   			  VALUES('$did','$fullname', '$email', '$bgroup', '$weight', '$dob', '$location', '$gender', '$lbdate')";
@@ -143,28 +137,23 @@ if (isset($_POST['reg_donor'])) {
 }
   // Message
 if (isset($_POST['con'])) {
-  // receive all input values from the form
+
   $email = mysqli_real_escape_string($db, $_POST['email']);
   $message = mysqli_real_escape_string($db, $_POST['message']);
 
-  // form validation: ensure that the form is correctly filled ...
-  // by adding (array_push()) corresponding error unto $errors array
   if (empty($email)) { array_push($errors, "Email address required"); }
   if (empty($message)) { array_push($errors, "Write a message"); }
 
-  // first check the database to make sure 
-  // a announcement does not already exist with the same a_no 
   $con_check_query = "SELECT * FROM contact WHERE message='$message' LIMIT 1";
   $result = mysqli_query($db, $con_check_query);
   $con = mysqli_fetch_assoc($result);
   
-  if ($con) { // if announcement no. exists
+  if ($con) { 
     if ($con['message'] === $message) {
       array_push($errors, "This message was already given");
     }
   }
 
-  // Finally, send message if there are no errors in the form
   if (count($errors) == 0) {
 
   	$query = "INSERT INTO contact (email, message) 

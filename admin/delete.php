@@ -1,7 +1,6 @@
 <?php
   
 include('../connect.php');
-// SQL query to select data from database
 $sql = "SELECT * FROM donor";
 $result = $mysqli->query($sql);
 $mysqli->close(); 
@@ -38,8 +37,7 @@ $mysqli->close();
                 {
              ?>
             <tr>
-                <!--FETCHING DATA FROM EACH 
-                    ROW OF EVERY COLUMN-->
+                <!--FETCHING DATA-->
                 <td><?php echo $rows['fullname'];?></td>
                 <td><?php echo $rows['email'];?></td>
                 <td><?php echo $rows['bgroup'];?></td>
@@ -48,6 +46,7 @@ $mysqli->close();
                 <td><?php echo $rows['location'];?></td>
                 <td><?php echo $rows['gender'];?></td>
                 <td><?php echo $rows['lbdate'];?></td>
+                <!--DELETE OPTION-->
                 <td><a href="deletion.php/?did=<?php echo $rows['did'];?>">delete</a></td>
             </tr>
             <?php

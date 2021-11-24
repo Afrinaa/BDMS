@@ -11,7 +11,7 @@
 <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
   <header class="mb-auto">
     <div>
-	<img class="float-md-start mb-0 bg-transparent" src='blooddrop.png' width='20px' height='30px'>
+	<img class="float-md-start mb-0 bg-transparent" src='img/blooddrop.png' width='20px' height='30px'>
       <h3 class="float-md-start mb-0">BDMS</h3>
       <nav class="nav nav-masthead justify-content-center float-md-end">
         <a class="nav-link link-light" href="home.php">Home</a>
@@ -24,7 +24,7 @@
   </header>
 
   <main class="px-3">
-    <h1>Blood Donation Management System</h1>
+    <h1>Blood Donor Management System</h1>
     <p class="lead">Your droplets of blood may create an ocean of happiness.</p>
     <p class="lead">
       <a href="user/dregister.php" class="btn btn-lg fw-bold border-white bg-white">Become a donor now!</a>
