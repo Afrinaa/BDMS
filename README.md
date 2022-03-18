@@ -1,2 +1,2 @@
-A database project.
+A DBMS project on "Blood Donor Management System".
 
